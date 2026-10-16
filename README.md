@@ -7,7 +7,8 @@ More information about the workshop can be found at https://www.vlsisystemdesign
 
 A special thanks to Tim and Kunal for creating and helping out.
 
-<a href = "https://github.com/RTimothyEdwards"> R. Timothy Edwards </a>
+<a href = "https://github.com/RTimothyEdwards"> R. Timothy Edwards </a><br>
+
 <a href = "https://github.com/kunalg123"> Kunal Ghosh </a>
 
 
@@ -20,17 +21,41 @@ A special thanks to Tim and Kunal for creating and helping out.
 - Additional Content Workshop 
 
 # Chapter 0 - Getting the tools
+Stepping into the LINUX Operating System. First download the VirtualBox and then UBUNTU by following the given links.<br>
+1. <a href = "https://www.virtualbox.org/">Download VirtualBox </a><br>
+2. <a href = "https://ubuntu.com/download/desktop">Download UBUNTU_26.04 </a><br>
+
+Open Ubuntu and right-click to open terminal. Everything will be coded here.Now before stepping into installation of tools lets first install pre-requisites.
+
+```bash
+$ sudo apt-get update
+$ mkdir -p eda_tools
+$ cd eda_tools
+$ echo "installing pre-requisite"
+echo "___________________________________________________"
+sudo apt-get install build-essential clang bison flex \
+	libreadline-dev gawk tcl-dev libffi-dev git \
+	graphviz xdot pkg-config python3 libboost-system-dev \
+	libboost-python-dev libboost-filesystem-dev zlib1g-dev \
+	make m4 tcsh csh libx11-dev gperf  tcl8.6-dev tk8.6 tk8.6-dev \
+	libxmp4 libxpm-dev  libxcb1 libcairo2  \
+      libxrender-dev libx11-xcb-dev libxaw7-dev freeglut3-dev automake yosys
+$ sudo apt-get update
+$ sudo apt-get -y install libtool
+```
+ 
 To adequately utilize the open source skywater130 pdk and understand the design flow, we first require to install all the tools, which are
 
 - open_pdk
 - magic
 - ngspice
 - xschem
-- netgen 
+- netgen
+  ![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Pre-requisites/ToolsImage/toolchains.png)
 
 Note: open_pdk has to be installed last so it can correctly associate the xschem and magic directories. Note: if the configure step fails during any process, its most likely due to missing additional packages, and they need to be installed (preferably from source) to complete the installation
 
-Magic
+### Magic <br>
 Magic is an open-source VLSI layout tool.
 
 Install steps:
@@ -41,9 +66,12 @@ $	 ./configure
 $  make
 $  sudo make install
 ```
-More info can be found at http://opencircuitdesign.com/magic/index.html
+More info can be found at http://opencircuitdesign.com/magic/index.html<br>
 
-Netgen
+Magic in my Desktop:-
+![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Pre-requisites/ToolsImage/MagicOpened.png)
+
+### Netgen
 Netgen is a tool for comparing netlists, a process known as LVS, which stands for "Layout vs. Schematic"
 
 Install steps:
@@ -54,9 +82,11 @@ $	./configure
 $  make
 $  sudo make install
 ```
-More info can be found at http://opencircuitdesign.com/netgen/index.html
+More info can be found at http://opencircuitdesign.com/netgen/index.html<br>
+Netgen in my Desktop:-
+![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Pre-requisites/ToolsImage/Netgen.png)
 
-Xschem
+### Xschem
 Xschem is a schematic capture program
 
 Install steps:
@@ -66,9 +96,12 @@ $	./configure
 $  make
 $  sudo make install
 ```
-More info can be found at http://repo.hu/projects/xschem/index.html
+More info can be found at http://repo.hu/projects/xschem/index.html<br>
+Xschem in my Desktop:-
+![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Pre-requisites/ToolsImage/XschemOpened.png)
 
-Ngspice
+
+### Ngspice
 ngspice is the open-source spice simulator for electric and electronic circuits.
 
 Install steps:
@@ -83,7 +116,9 @@ After downloading the tarball from https://sourceforge.net/projects/ngspice/file
  $ make
  $ sudo make install
 ```
-More info can be found at https://ngspice.sourceforge.io/index.html
+More info can be found at https://ngspice.sourceforge.io/index.html<br>
+Ngspice in my Desktop:-
+![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Pre-requisites/ToolsImage/NgspiceOpened.png)
 
 Please note that to view the simulation graphs of ngspice, xterm is required and can be installed using.
 ```bash
@@ -101,4 +136,6 @@ $	./configure --enable-sky130-pdk
 $  make
 $  sudo make install
 ```
+Netgen in my Desktop:-
+![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Pre-requisites/ToolsImage/Netgen.png)
 Now that we have all the necessary tools installed let's understand the design flow!
