@@ -68,9 +68,6 @@ $  sudo make install
 ```
 More info can be found at http://opencircuitdesign.com/magic/index.html<br>
 
-Magic in my Desktop:-
-![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Pre-requisites/ToolsImage/MagicOpened.png)
-
 ### Netgen
 Netgen is a tool for comparing netlists, a process known as LVS, which stands for "Layout vs. Schematic"
 
@@ -83,8 +80,7 @@ $  make
 $  sudo make install
 ```
 More info can be found at http://opencircuitdesign.com/netgen/index.html<br>
-Netgen in my Desktop:-
-![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Pre-requisites/ToolsImage/Netgen.png)
+
 
 ### Xschem
 Xschem is a schematic capture program
@@ -97,9 +93,6 @@ $  make
 $  sudo make install
 ```
 More info can be found at http://repo.hu/projects/xschem/index.html<br>
-Xschem in my Desktop:-
-![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Pre-requisites/ToolsImage/XschemOpened.png)
-
 
 ### Ngspice
 ngspice is the open-source spice simulator for electric and electronic circuits.
@@ -117,8 +110,7 @@ After downloading the tarball from https://sourceforge.net/projects/ngspice/file
  $ sudo make install
 ```
 More info can be found at https://ngspice.sourceforge.io/index.html<br>
-Ngspice in my Desktop:-
-![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Pre-requisites/ToolsImage/NgspiceOpened.png)
+
 
 Please note that to view the simulation graphs of ngspice, xterm is required and can be installed using.
 ```bash
@@ -136,6 +128,45 @@ $	./configure --enable-sky130-pdk
 $  make
 $  sudo make install
 ```
+Now that we have all the necessary tools installed let's understand the design flow!
+
+# Chapter 1 - Understanding the design flow
+Verifiying the open_pdk installation
+
+An initial working directory can be made by copying the required files as follows:
+```bash
+$ mkdir Lab1_and
+$ cd Lab1_and
+$ mkdir mag
+$ mkdir netgen
+$ mkdir xschem
+$ cd xschem
+$ cp /usr/local/share/pdk/sky130A/libs.tech/xschem/xschemrc .
+$ cp /usr/local/share/pdk/sky130A/libs.tech/ngspice/spinit .spiceinit
+$ cd ../mag
+$ cp /usr/local/share/pdk/sky130A/libs.tech/magic/sky130A.magicrc .magicrc
+$ cd ../netgen
+$ cp /usr/local/share/pdk/sky130A/libs.tech/netgen//sky130A_setup.tcl .
+```
+Magic in my Desktop:-
+![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Pre-requisites/ToolsImage/MagicOpened.png)
+
 Netgen in my Desktop:-
 ![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Pre-requisites/ToolsImage/Netgen.png)
-Now that we have all the necessary tools installed let's understand the design flow!
+
+Xschem in my Desktop:-
+![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Pre-requisites/ToolsImage/XschemOpened.png)
+
+Ngspice in my Desktop:-
+![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Pre-requisites/ToolsImage/NgspiceOpened.png)
+
+# Creating inverter schematic using xschem
+
+An initial schematic is made by placing components from the open_pdk library
+The required changes to the properties of the device can be made here and will automatically reflect in the layout 
+
+
+
+
+
+
