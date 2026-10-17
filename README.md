@@ -164,6 +164,21 @@ Ngspice in my Desktop:-
 
 An initial schematic is made by placing components from the open_pdk library
 The required changes to the properties of the device can be made here and will automatically reflect in the layout 
+![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Lab1/inverter.sch.png)
+
+Converted the schematic to a symbol 
+![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Lab1/invertersym.png)
+
+Using the symbol, we can create an independent test bench to simulate the circuit 
+![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Lab2/inverter.tb.sch.png)
+
+#Creating and simulating testbench Schematic
+
+The circuit can be simulated in ngspice. make sure to disable .subckt in the simulation tab for the netlist generated for the sim
+![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Lab2/simulation%20combo.png)
+
+
+
 
 
 
