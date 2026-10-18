@@ -1,0 +1,6 @@
+** sch_path: /home/siwangi/eda_tools/Lab1/xschem/inverter.sch
+.subckt inverter Vdd Vin Vout Vss
+*.PININFO Vin:I Vout:O Vdd:B Vss:B
+XM1 Vout Vin Vss Vss sky130_fd_pr__nfet_01v8 L=0.18 W=4.5 nf=3
+XM2 Vout Vin Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.18 W=3 nf=3
+.ends
