@@ -177,6 +177,40 @@ Using the symbol, we can create an independent test bench to simulate the circui
 The circuit can be simulated in ngspice. make sure to disable .subckt in the simulation tab for the netlist generated for the sim
 ![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/Lab2/simulation%20combo.png)
 
+# Creating inverter layout in Magic and exporting its netlist
+
+The original schematic can be used to export a netlist, which can be imported into magic to create the layout.
+
+Set the appropriate device properties and route the layout. 
+![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/lab3/pfet%20para.png)
+![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/lab3/nfet%20par.png)
+![image alt](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/lab3/extractcommandsmagic.png)
+
+# Performing LVS checks on testbench and layout netlists
+
+The netlist of the layout can be extracted using
+``` bash
+% extract do local
+% extract all
+% ext2spice lvs
+% ext2spice
+```
+
+ext files are intermidiate files and can be cleaned using
+``` bash
+rm *.ext
+/usr/local/share/pdk/scripts/cleanup_unref.py -remove
+```
+
+The schematic netlist and layout netlist can be compared using LVS by netgen
+```bash
+$ netgen -batch lvs "../mag/inverter.spice inverter" "../xschem/inverter.spice inverter"
+```
+At first the LVS done but msimatch.
+![image](https://github.com/siwangigahlot/OpenPDK_SkyWater130/blob/main/lab4/mismatch%20lvs.png)
+
+
+
 
 
 
